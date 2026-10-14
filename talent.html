@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Clyfe Talent | People & Workforce Solutions</title>
+        <meta name="description"
+            content="Explore Clyfe Talent workforce solutions, IT talent, professional talent and healthcare workforce capabilities.">
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <style>
+        /* CLYFE TALENT PAGE */
+
+        .talent-page {
+    color: #211a30;
+    overflow-x: clip;
+    overflow-y: auto;
+}
+
+        .talent-hero {
+            position: relative;
+            padding: 105px 6% 90px;
+            overflow: hidden;
+            background: #191428;
+            color: #fff;
+        }
+
+        .talent-hero::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            top: -180px;
+            right: -100px;
+            border-radius: 50%;
+            background: #8053df;
+            filter: blur(130px);
+            opacity: .48;
+        }
+
+        .talent-hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            right: 16%;
+            bottom: -220px;
+            border: 1px solid rgba(190, 160, 255, .35);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(190, 160, 255, .05),
+                        0 0 0 70px rgba(190, 160, 255, .05);
+        }
+
+        .talent-hero-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            align-items: center;
+            gap: 55px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .talent-eyebrow {
+            color: #c5aaff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+        }
+
+        .talent-hero h1 {
+            margin: 24px 0;
+            font-size: clamp(43px, 6vw, 76px);
+            line-height: 1.06;
+            letter-spacing: -3px;
+        }
+
+        .talent-hero h1 span {
+            color: #b99aff;
+        }
+
+        .talent-hero-copy {
+            max-width: 610px;
+            color: #d1cbdc;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .talent-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .talent-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 23px;
+            border: 1px solid #8053df;
+            border-radius: 50px;
+            background: #8053df;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .talent-btn:hover {
+            transform: translateY(-3px);
+            background: #986fea;
+        }
+
+        .talent-btn-outline {
+            border-color: #6a607b;
+            background: transparent;
+        }
+
+        .talent-btn-outline:hover {
+            background: #302740;
+        }
+
+        /* HERO VISUAL */
+
+        .talent-visual {
+            position: relative;
+            display: flex;
+            min-height: 390px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .talent-visual-ring {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(194, 165, 255, .4);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(194, 165, 255, .05),
+                        0 0 0 70px rgba(194, 165, 255, .04);
+            animation: talentOrbit 22s linear infinite;
+        }
+
+        .talent-visual-core {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 145px;
+            height: 145px;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid rgba(255, 255, 255, .22);
+            border-radius: 42px;
+            background: linear-gradient(135deg, #7950df, #a87cf2);
+            box-shadow: 0 25px 70px rgba(91, 51, 180, .35);
+            color: white;
+            font-size: 38px;
+            font-weight: 800;
+            animation: talentFloat 4s ease-in-out infinite;
+        }
+
+        .talent-float-label {
+            position: absolute;
+            z-index: 2;
+            padding: 13px 17px;
+            border: 1px solid rgba(255, 255, 255, .65);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .95);
+            color: #392852;
+            font-size: 12px;
+            font-weight: 800;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+        }
+
+        .talent-float-one {
+            top: 50px;
+            left: 0;
+        }
+
+        .talent-float-two {
+            top: 130px;
+            right: -5px;
+        }
+
+        .talent-float-three {
+            bottom: 45px;
+            left: 25px;
+        }
+
+        /* INTRODUCTION */
+
+        .talent-intro {
+            padding: 95px 6%;
+            background: #fff;
+        }
+
+        .talent-intro-inner {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .talent-section-label {
+            color: #8053df;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.3px;
+        }
+
+        .talent-intro h2,
+        .talent-services-heading h2,
+        .talent-approach h2 {
+            margin: 18px 0;
+            font-size: clamp(32px, 4vw, 49px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .talent-intro h2 span,
+        .talent-services-heading h2 span,
+        .talent-approach h2 span {
+            color: #8053df;
+        }
+
+        .talent-intro-copy p {
+            margin: 0 0 18px;
+            color: #777287;
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        /* SERVICE AREAS */
+
+        .talent-services {
+            padding: 95px 6%;
+            background: #f8f6fc;
+        }
+
+        .talent-services-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .talent-services-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .talent-services-heading p {
+            max-width: 450px;
+            margin: 0 0 8px;
+            color: #777287;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .talent-service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .talent-service-card {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid #e9e2f5;
+            border-radius: 23px;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .talent-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px rgba(46, 27, 85, .10);
+        }
+
+        .talent-card-number {
+            display: flex;
+            width: 54px;
+            height: 54px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            border-radius: 17px;
+            background: #eee6ff;
+            color: #8053df;
+            font-size: 24px;
+        }
+
+        .talent-service-card h3 {
+            margin: 0 0 14px;
+            font-size: 22px;
+            line-height: 1.35;
+        }
+
+        .talent-service-card p {
+            min-height: 105px;
+            margin: 0 0 22px;
+            color: #777287;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .talent-service-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #7950d8;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        /* APPROACH */
+
+        .talent-approach {
+            padding: 100px 6%;
+            background: #fff;
+        }
+
+        .talent-approach-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .talent-approach-copy > p {
+            color: #777287;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .talent-approach-points {
+            display: grid;
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .talent-approach-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px;
+            border: 1px solid #eee8f7;
+            border-radius: 15px;
+            background: #fbfaff;
+        }
+
+        .talent-check {
+            display: flex;
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #eee6ff;
+            color: #7950d8;
+            font-weight: 800;
+        }
+
+        .talent-approach-point strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .talent-approach-point p {
+            margin: 0;
+            color: #777287;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .talent-approach-art {
+            position: relative;
+            display: flex;
+            min-height: 430px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #eee6ff, #d8c8ff);
+        }
+
+        .talent-approach-art::before,
+        .talent-approach-art::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(100, 60, 170, .3);
+            border-radius: 50%;
+        }
+
+        .talent-approach-art::after {
+            width: 360px;
+            height: 360px;
+        }
+
+        .talent-art-card {
+            position: relative;
+            z-index: 1;
+            width: 235px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 23px;
+            background: rgba(255, 255, 255, .88);
+            box-shadow: 0 25px 60px rgba(61, 39, 111, .12);
+            transform: rotate(-4deg);
+            animation: talentFloat 5s ease-in-out infinite;
+        }
+
+        .talent-art-card span {
+            color: #8053df;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .talent-art-card h3 {
+            margin: 16px 0 10px;
+            font-size: 26px;
+            line-height: 1.2;
+        }
+
+        .talent-art-card p {
+            color: #777287;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .talent-cta {
+            padding: 85px 6%;
+            background: #191428;
+            color: white;
+        }
+
+        .talent-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .talent-cta h2 {
+            max-width: 700px;
+            margin: 0 0 15px;
+            font-size: clamp(32px, 4vw, 47px);
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .talent-cta p {
+            color: #d0c9dd;
+            line-height: 1.8;
+        }
+
+        @keyframes talentFloat {
+            0%, 100% { transform: translateY(0) rotate(-4deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        @keyframes talentOrbit {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .talent-hero-inner,
+            .talent-intro-inner,
+            .talent-approach-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .talent-visual {
+                min-height: 340px;
+            }
+
+            .talent-services-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .talent-service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .talent-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .talent-hero,
+            .talent-intro,
+            .talent-services,
+            .talent-approach,
+            .talent-cta {
+                padding: 70px 5%;
+            }
+
+            .talent-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .talent-service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .talent-service-card p {
+                min-height: auto;
+            }
+
+            .talent-visual {
+                min-height: 300px;
+            }
+
+            .talent-visual-ring {
+                width: 220px;
+                height: 220px;
+            }
+
+            .talent-visual-core {
+                width: 115px;
+                height: 115px;
+                border-radius: 32px;
+            }
+
+            .talent-float-one {
+                top: 20px;
+                left: 0;
+            }
+
+            .talent-float-two {
+                right: 0;
+                top: 110px;
+            }
+
+            .talent-float-three {
+                bottom: 15px;
+                left: 0;
+            }
+
+            .talent-approach-art {
+                min-height: 340px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .talent-visual-core,
+            .talent-visual-ring,
+            .talent-art-card {
+                animation: none;
+            }
+        }
+    </style>
+    </head>
+
+    <body class="talent-page">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <section class="talent-hero">
+            <div class="talent-hero-inner">
+
+                <div>
+                    <span class="talent-eyebrow">CLYFE TALENT</span>
+
+                    <h1>
+                        People power.<br>
+                        <span>Possibilities grow.</span>
+                    </h1>
+
+                    <p class="talent-hero-copy">
+                        People are at the heart of every successful
+                        organization.
+                        Clyfe Talent focuses on connecting businesses with the
+                        talent and workforce capabilities they need to move
+                        forward.
+                    </p>
+
+                    <div class="talent-actions">
+                        <a href="#talent-solutions" class="talent-btn">
+                            Explore Solutions ↓
+                        </a>
+
+                        <a href="contact.html"
+                            class="talent-btn talent-btn-outline">
+                            Let's Talk ↗
+                        </a>
+                    </div>
+                </div>
+
+                <div class="talent-visual">
+                    <div class="talent-visual-ring"></div>
+                    <div class="talent-visual-core">CT</div>
+
+                    <span class="talent-float-label talent-float-one">
+                        PEOPLE FIRST
+                    </span>
+
+                    <span class="talent-float-label talent-float-two">
+                        RIGHT EXPERTISE
+                    </span>
+
+                    <span class="talent-float-label talent-float-three">
+                        WORKFORCE GROWTH
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="talent-intro">
+            <div class="talent-intro-inner">
+
+                <div>
+                    <span class="talent-section-label">WHO WE ARE</span>
+
+                    <h2>
+                        Connecting talent with
+                        <span>opportunity.</span>
+                    </h2>
+                </div>
+
+                <div class="talent-intro-copy">
+                    <p>
+                        Clyfe Talent is focused on people and workforce
+                        solutions
+                        that help organizations address their talent
+                        requirements.
+                        Finding the right expertise can be an important part of
+                        delivering projects and supporting business growth.
+                    </p>
+
+                    <p>
+                        From technology talent to professional and healthcare
+                        workforce needs, explore the capabilities relevant to
+                        your organization's goals.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TALENT SOLUTIONS -->
+        <section class="talent-services" id="talent-solutions">
+            <div class="talent-services-inner">
+
+                <div class="talent-services-heading">
+                    <div>
+                        <span class="talent-section-label">OUR
+                            CAPABILITIES</span>
+
+                        <h2>
+                            Talent solutions for<br>
+                            <span>evolving needs.</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Explore workforce capabilities designed around different
+                        business functions, specialist skills and organizational
+                        requirements.
+                    </p>
+                </div>
+
+                <div class="talent-service-grid">
+
+                    <article class="talent-service-card">
+                        <div class="talent-card-number">01</div>
+
+                        <h3>IT Talent Solutions</h3>
+
+                        <p>
+                            Explore technology talent capabilities for projects
+                            and teams that require specialist digital and
+                            technical expertise.
+                        </p>
+
+                        <a href="contact.html">Discuss Your Needs ↗</a>
+                    </article>
+
+                    <article class="talent-service-card">
+                        <div class="talent-card-number">02</div>
+
+                        <h3>Professional Talent Solutions</h3>
+
+                        <p>
+                            Explore workforce support for professional roles
+                            and business functions as organizational needs
+                            evolve.
+                        </p>
+
+                        <a href="staffing.html">Explore Staffing ↗</a>
+                    </article>
+
+                    <article class="talent-service-card">
+                        <div class="talent-card-number">03</div>
+
+                        <h3>Healthcare Workforce Solutions</h3>
+
+                        <p>
+                            Explore workforce capabilities for healthcare
+                            organizations and their staffing requirements.
+                        </p>
+
+                        <a href="contact.html">Contact Our Team ↗</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR APPROACH -->
+        <section class="talent-approach">
+            <div class="talent-approach-inner">
+
+                <div class="talent-approach-copy">
+                    <span class="talent-section-label">OUR APPROACH</span>
+
+                    <h2>
+                        The right people.<br>
+                        <span>Meaningful progress.</span>
+                    </h2>
+
+                    <p>
+                        Workforce needs can change as businesses grow, projects
+                        evolve and new priorities emerge. Understanding those
+                        needs is an important first step toward finding the
+                        right talent solution.
+                    </p>
+
+                    <div class="talent-approach-points">
+
+                        <div class="talent-approach-point">
+                            <span class="talent-check">✓</span>
+                            <div>
+                                <strong>Understand the requirement</strong>
+                                <p>Start with the organization's skills and
+                                    workforce needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="talent-approach-point">
+                            <span class="talent-check">✓</span>
+                            <div>
+                                <strong>Focus on relevant expertise</strong>
+                                <p>Identify the capabilities that align with the
+                                    requirement.</p>
+                            </div>
+                        </div>
+
+                        <div class="talent-approach-point">
+                            <span class="talent-check">✓</span>
+                            <div>
+                                <strong>Support business goals</strong>
+                                <p>Keep workforce needs connected to broader
+                                    objectives.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="talent-approach-art">
+                    <div class="talent-art-card">
+                        <span>CLYFE TALENT</span>
+                        <h3>People make the difference.</h3>
+                        <p>
+                            Bringing workforce needs and relevant capabilities
+                            together.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+        <section class="talent-cta">
+            <div class="talent-cta-inner">
+
+                <div>
+                    <h2>Looking for the right talent solution?</h2>
+
+                    <p>
+                        Tell us about your workforce requirements and start
+                        a conversation with Clyfe.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="talent-btn">
+                    Let's Talk ↗
+                </a>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

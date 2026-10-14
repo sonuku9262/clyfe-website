@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Clyfe | Let's Solve Something Difficult</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .contact-page {
+            --contact-purple: #7138e8;
+            --contact-dark: #211a30;
+            --contact-muted: #716b7d;
+            color: var(--contact-dark);
+            overflow-x: clip;
+        }
+
+        .contact-page * {
+            box-sizing: border-box;
+        }
+
+        .contact-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 95px 7% 85px;
+            background:
+                radial-gradient(ellipse at 10% 10%,
+                    rgba(133, 81, 255, .15), transparent 40%),
+                linear-gradient(135deg, #f8f5ff, #fff 70%);
+        }
+
+        .contact-hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            right: -90px;
+            top: -90px;
+            border: 1px solid rgba(113, 56, 232, .16);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 35px rgba(113, 56, 232, .035),
+                0 0 0 70px rgba(113, 56, 232, .025);
+            animation: contact-orbit 12s linear infinite;
+            pointer-events: none;
+        }
+
+        .contact-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1050px;
+            margin: auto;
+            text-align: center;
+            animation: contact-enter .8s ease both;
+        }
+
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 17px;
+            border: 1px solid #e5d8ff;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, .8);
+            color: #6632c9;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .contact-eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #7a43ed;
+            box-shadow: 0 0 0 4px #eee5ff;
+        }
+
+        .contact-hero h1 {
+            margin: 25px 0 20px;
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 1.08;
+            letter-spacing: -2.8px;
+            font-weight: 800;
+        }
+
+        .contact-hero h1 span {
+            color: var(--contact-purple);
+        }
+
+        .contact-hero p {
+            max-width: 710px;
+            margin: auto;
+            color: var(--contact-muted);
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .contact-main {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            align-items: start;
+            gap: 45px;
+            max-width: 1250px;
+            margin: auto;
+            padding: 85px 7%;
+        }
+
+        .contact-info {
+            padding-top: 12px;
+            animation: contact-enter .8s .1s ease both;
+        }
+
+        .contact-info h2 {
+            margin: 20px 0;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            letter-spacing: -1.4px;
+        }
+
+        .contact-info > p {
+            color: var(--contact-muted);
+            line-height: 1.9;
+        }
+
+        .contact-info-list {
+            display: grid;
+            gap: 17px;
+            margin-top: 32px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 19px;
+            border: 1px solid #eee8f8;
+            border-radius: 17px;
+            background: #fff;
+            transition: transform .3s ease,
+                        box-shadow .3s ease;
+        }
+
+        .contact-info-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 12px 30px rgba(49, 28, 83, .07);
+        }
+
+        .contact-info-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 45px;
+            width: 45px;
+            height: 45px;
+            border-radius: 13px;
+            background: #f0e8ff;
+            color: var(--contact-purple);
+            font-size: 21px;
+        }
+
+        .contact-info-item h3 {
+            margin: 2px 0 7px;
+            font-size: 16px;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            margin: 0;
+            color: var(--contact-muted);
+            font-size: 14px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info-item a {
+            color: #6935ce;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-card {
+            padding: 38px;
+            border: 1px solid #eee7f8;
+            border-radius: 25px;
+            background: #fff;
+            box-shadow: 0 20px 65px rgba(49, 28, 83, .08);
+            animation: contact-enter .8s .2s ease both;
+        }
+
+        .contact-form-card h2 {
+            margin: 0 0 10px;
+            font-size: 29px;
+            letter-spacing: -.7px;
+        }
+
+        .contact-form-card > p {
+            margin: 0 0 28px;
+            color: var(--contact-muted);
+            line-height: 1.7;
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .contact-field {
+            min-width: 0;
+        }
+
+        .contact-field-full {
+            grid-column: 1 / -1;
+        }
+
+        .contact-field label {
+            display: block;
+            margin-bottom: 9px;
+            color: #30283f;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .contact-field label span {
+            color: #e34b68;
+        }
+
+        .contact-field input,
+        .contact-field select,
+        .contact-field textarea {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            padding: 14px 15px;
+            border: 1px solid #e5dfed;
+            border-radius: 11px;
+            outline: none;
+            background: #fcfbfe;
+            color: var(--contact-dark);
+            font: inherit;
+            font-size: 14px;
+            transition: border-color .25s ease,
+                        box-shadow .25s ease,
+                        background .25s ease;
+        }
+
+        .contact-field input,
+        .contact-field select {
+            min-height: 49px;
+        }
+
+        .contact-field textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-field input:focus,
+        .contact-field select:focus,
+        .contact-field textarea:focus {
+            border-color: #8b5cf6;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(113, 56, 232, .1);
+        }
+
+        .contact-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 23px;
+            padding: 16px 22px;
+            border: 0;
+            border-radius: 12px;
+            background: linear-gradient(110deg, #853cff, #5720d7);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(113, 56, 232, .22);
+            transition: transform .25s ease,
+                        box-shadow .25s ease;
+        }
+
+        .contact-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(113, 56, 232, .3);
+        }
+
+        .contact-submit span {
+            transition: transform .25s ease;
+        }
+
+        .contact-submit:hover span {
+            transform: translateX(5px);
+        }
+
+        .contact-privacy {
+            margin: 14px 0 0;
+            color: #898294;
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .contact-bottom {
+            margin: 0 7% 85px;
+            padding: 55px 25px;
+            border-radius: 25px;
+            background: linear-gradient(120deg, #5420b5, #8145ed);
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-bottom h2 {
+            margin: 0 0 15px;
+            font-size: clamp(29px, 4vw, 43px);
+            letter-spacing: -1px;
+        }
+
+        .contact-bottom p {
+            max-width: 650px;
+            margin: auto;
+            color: #eee5ff;
+            line-height: 1.8;
+        }
+
+        .contact-bottom a {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 13px 23px;
+            border-radius: 30px;
+            background: #fff;
+            color: #5924b8;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform .25s ease;
+        }
+
+        .contact-bottom a:hover {
+            transform: translateY(-3px);
+        }
+
+        @keyframes contact-enter {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes contact-orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .contact-main {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .contact-info {
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-hero {
+                padding: 72px 6%;
+            }
+
+            .contact-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .contact-hero p {
+                font-size: 16px;
+            }
+
+            .contact-main {
+                padding: 55px 6%;
+            }
+
+            .contact-form-card {
+                padding: 24px 19px;
+                border-radius: 19px;
+            }
+
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .contact-field-full {
+                grid-column: auto;
+            }
+
+            .contact-bottom {
+                margin: 0 5% 60px;
+                padding: 42px 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .contact-page *,
+            .contact-page *::before,
+            .contact-page *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="contact-page">
+
+    <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-inner">
+            <span class="contact-eyebrow">Let's Connect</span>
+
+            <h1>
+                Bring us the challenge.<br>
+                <span>We'll shape the next step.</span>
+            </h1>
+
+            <p>
+                Whether you're exploring business transformation,
+                AI and technology, or talent solutions, let's talk
+                about what you're working toward.
+            </p>
+        </div>
+    </section>
+
+    <main class="contact-main">
+
+        <section class="contact-info">
+            <span class="contact-eyebrow">Talk to Clyfe</span>
+
+            <h2>Let's solve something difficult.</h2>
+
+            <p>
+                Tell us about your business challenge. Our focus
+                brings consulting, technology and specialized talent
+                together to help organizations move forward.
+            </p>
+
+            <div class="contact-info-list">
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">✉</div>
+                    <div>
+                        <h3>Email us</h3>
+                        <a href="mailto:connect@clyfe.co">
+                            connect@clyfe.co
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">◎</div>
+                    <div>
+                        <h3>Consult</h3>
+                        <p>
+                            Discuss strategy, business challenges
+                            and transformation opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">⌘</div>
+                    <div>
+                        <h3>Build</h3>
+                        <p>
+                            Explore AI, data, platforms and
+                            practical technology solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">↗</div>
+                    <div>
+                        <h3>Scale</h3>
+                        <p>
+                            Talk about talent, workforce and
+                            specialized team requirements.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-form-card">
+            <h2>Tell us how we can help.</h2>
+            <p>
+                Fill in the details below to describe your inquiry.
+                Fields marked * are required.
+            </p>
+
+            <form id="clyfeContactForm">
+                <div class="contact-form-grid">
+
+                    <div class="contact-field">
+                        <label for="contactFirstName">
+                            First Name <span>*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="contactFirstName"
+                            name="first_name"
+                            placeholder="Your first name"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contactLastName">
+                            Last Name <span>*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="contactLastName"
+                            name="last_name"
+                            placeholder="Your last name"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contactEmail">
+                            Work Email <span>*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="you@company.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contactCompany">
+                            Company Name
+                        </label>
+                        <input
+                            type="text"
+                            id="contactCompany"
+                            name="company"
+                            placeholder="Your company"
+                            autocomplete="organization"
+                        >
+                    </div>
+
+                    <div class="contact-field contact-field-full">
+                        <label for="contactTopic">
+                            How can we help? <span>*</span>
+                        </label>
+                        <select id="contactTopic" name="topic" required>
+                            <option value="">Choose an inquiry type</option>
+                            <option value="Consulting and Transformation">
+                                Consulting & Transformation
+                            </option>
+                            <option value="AI, Data and Technology">
+                                AI, Data & Technology
+                            </option>
+                            <option value="Talent and Workforce">
+                                Talent & Workforce
+                            </option>
+                            <option value="Products and Platforms">
+                                Products & Platforms
+                            </option>
+                            <option value="Partnership">
+                                Partnership
+                            </option>
+                            <option value="Other">
+                                Other Inquiry
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="contact-field contact-field-full">
+                        <label for="contactMessage">
+                            Tell us about your challenge <span>*</span>
+                        </label>
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            placeholder="What are you looking to achieve?"
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <button class="contact-submit" type="submit">
+                    Send Your Inquiry <span>↗</span>
+                </button>
+
+                <p class="contact-privacy">
+                    By submitting, you agree that Clyfe may use
+                    the details provided to respond to your inquiry.
+                </p>
+
+                <p
+                    id="contactFormNotice"
+                    role="status"
+                    aria-live="polite"
+                    style="display:none; margin-top:16px; line-height:1.7;"
+                ></p>
+            </form>
+        </section>
+
+    </main>
+
+    <section class="contact-bottom">
+        <h2>Ready to move forward?</h2>
+        <p>
+            Start a conversation about your goals, your challenges
+            and the possibilities ahead.
+        </p>
+        <a href="mailto:connect@clyfe.co">
+            Email Clyfe ↗
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+    // Front-end validation only.
+    // Connect a backend or form service to actually send messages.
+
+    const clyfeContactForm =
+        document.getElementById('clyfeContactForm');
+
+    const contactFormNotice =
+        document.getElementById('contactFormNotice');
+
+    clyfeContactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (!clyfeContactForm.checkValidity()) {
+            clyfeContactForm.reportValidity();
+            return;
+        }
+
+        contactFormNotice.style.display = 'block';
+        contactFormNotice.style.color = '#9b3b24';
+        contactFormNotice.textContent =
+            'Your details are filled in, but online submission is not connected yet. Please email connect@clyfe.co or connect this form to a backend.';
+
+        contactFormNotice.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+    });
+</script>
+
+</body>
+</html>

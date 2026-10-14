@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Clyfe</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .solutions-page {
+            color: #211a30;
+            overflow-x: clip;
+        }
+
+        .solutions-hero {
+            padding: 110px 7%;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f0ff, #fff);
+        }
+
+        .solutions-tag {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: #ece3ff;
+            color: #6738c5;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .solutions-hero h1 {
+            max-width: 900px;
+            margin: 24px auto;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+
+        .solutions-hero h1 span {
+            color: #7543d6;
+        }
+
+        .solutions-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #6e667b;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .solutions-section {
+            padding: 80px 7%;
+        }
+
+        .solutions-heading {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .solutions-heading h2 {
+            margin: 18px 0;
+            font-size: clamp(30px, 4vw, 44px);
+            letter-spacing: -1px;
+        }
+
+        .solutions-heading p {
+            color: #716a7c;
+            line-height: 1.8;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .solution-card {
+            padding: 32px;
+            border: 1px solid #eee7f8;
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 10px 35px rgba(49, 28, 83, .05);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(49, 28, 83, .12);
+        }
+
+        .solution-icon {
+            display: grid;
+            place-items: center;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 24px;
+            border-radius: 17px;
+            background: #efe7ff;
+            color: #7040cb;
+            font-size: 28px;
+        }
+
+        .solution-card h3 {
+            margin: 0 0 14px;
+            font-size: 23px;
+        }
+
+        .solution-card p {
+            margin-bottom: 24px;
+            color: #716a7c;
+            line-height: 1.8;
+        }
+
+        .solution-card a {
+            color: #6838c5;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .solution-card a:hover {
+            text-decoration: underline;
+        }
+
+        .solutions-cta {
+            margin: 10px 7% 85px;
+            padding: 65px 25px;
+            border-radius: 28px;
+            background: linear-gradient(120deg, #5124a8, #8050e5);
+            color: #fff;
+            text-align: center;
+        }
+
+        .solutions-cta h2 {
+            margin: 0 0 18px;
+            font-size: clamp(30px, 4vw, 45px);
+        }
+
+        .solutions-cta p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #eee6ff;
+            line-height: 1.8;
+        }
+
+        .solutions-cta a {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: #fff;
+            color: #5424a8;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .solutions-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .solutions-hero {
+                padding: 75px 6%;
+            }
+
+            .solutions-section {
+                padding: 55px 6%;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solutions-cta {
+                margin: 10px 5% 60px;
+                padding: 45px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="solutions-page">
+
+         <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+        <section class="solutions-hero">
+            <span class="solutions-tag">Our Solutions</span>
+
+            <h1>
+                The right solutions to
+                <span>move you forward.</span>
+            </h1>
+
+            <p>
+                Discover talent, technology and learning capabilities
+                designed to help businesses navigate challenges
+                and create new possibilities.
+            </p>
+        </section>
+
+        <section class="solutions-section">
+            <div class="solutions-heading">
+                <span class="solutions-tag">What We Do</span>
+                <h2>Possibilities become progress.</h2>
+                <p>
+                    Explore the capabilities of Clyfe's businesses
+                    and discover the areas that best fit your needs.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+
+                <article class="solution-card">
+                    <div class="solution-icon">✦</div>
+                    <h3>Talent Solutions</h3>
+                    <p>
+                        Explore professional talent and workforce
+                        solutions that help organizations find
+                        the capabilities they need.
+                    </p>
+                    <a href="talent.html">Explore Clyfe Talent →</a>
+                </article>
+
+                <article class="solution-card">
+                    <div class="solution-icon">⌘</div>
+                    <h3>Technology Solutions</h3>
+                    <p>
+                        Discover technology and digital capabilities
+                        that support business needs and help
+                        organizations move forward.
+                    </p>
+                    <a href="celsior.html">Explore Celsior →</a>
+                </article>
+
+                <article class="solution-card">
+                    <div class="solution-icon">↗</div>
+                    <h3>Learning Solutions</h3>
+                    <p>
+                        Explore learning and skill-development
+                        possibilities to help people prepare
+                        for a changing world of work.
+                    </p>
+                    <a href="genspark.html">Explore GenSpark →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="solutions-cta">
+            <h2>Let's solve your next challenge.</h2>
+            <p>
+                Tell us what you're working toward.
+                Let's explore the possibilities together.
+            </p>
+            <a href="contact.html">Let's Talk ↗</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

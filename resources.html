@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Insights | Clyfe</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .resources-page {
+            color: #211a30;
+            overflow-x: clip;
+        }
+
+        .resources-hero {
+            padding: 110px 7% 90px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f5ff, #ffffff);
+        }
+
+        .resources-label {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: #eee5ff;
+            color: #6636c5;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .resources-hero h1 {
+            max-width: 850px;
+            margin: 24px auto;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+
+        .resources-hero h1 span {
+            color: #7543d6;
+        }
+
+        .resources-hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #686174;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .resources-section {
+            padding: 80px 7%;
+        }
+
+        .resources-heading {
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .resources-heading h2 {
+            margin: 15px 0;
+            font-size: clamp(30px, 4vw, 44px);
+            letter-spacing: -1px;
+        }
+
+        .resources-heading p {
+            color: #716a7c;
+            line-height: 1.8;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .resource-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 330px;
+            padding: 30px;
+            border: 1px solid #eee8f7;
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 10px 35px rgba(49, 28, 83, .05);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(49, 28, 83, .12);
+        }
+
+        .resource-icon {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 24px;
+            border-radius: 16px;
+            background: #f0e8ff;
+            color: #7543d6;
+            font-size: 27px;
+        }
+
+        .resource-card .resource-type {
+            margin-bottom: 12px;
+            color: #7543d6;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .resource-card h3 {
+            margin: 0 0 14px;
+            font-size: 23px;
+            line-height: 1.4;
+        }
+
+        .resource-card p {
+            margin: 0 0 25px;
+            color: #716a7c;
+            line-height: 1.8;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            color: #6838c5;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .resource-link:hover {
+            gap: 13px;
+        }
+
+        .resources-cta {
+            margin: 20px 7% 90px;
+            padding: 65px 25px;
+            border-radius: 28px;
+            background: linear-gradient(120deg, #5124a8, #8050e5);
+            color: white;
+            text-align: center;
+        }
+
+        .resources-cta h2 {
+            margin: 0 0 18px;
+            font-size: clamp(30px, 4vw, 45px);
+        }
+
+        .resources-cta p {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: #eee6ff;
+            line-height: 1.8;
+        }
+
+        .resources-cta a {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: white;
+            color: #5424a8;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease;
+        }
+
+        .resources-cta a:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 900px) {
+            .resources-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .resources-hero {
+                padding: 75px 6%;
+            }
+
+            .resources-section {
+                padding: 55px 6%;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                min-height: 290px;
+            }
+
+            .resources-cta {
+                margin: 10px 5% 60px;
+                padding: 45px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resources-page">
+
+         <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+        <section class="resources-hero">
+            <span class="resources-label">Resources & Insights</span>
+
+            <h1>
+                Ideas that move <span>business forward.</span>
+            </h1>
+
+            <p>
+                Explore ideas, insights and practical perspectives on
+                talent, technology and the changing world of work.
+            </p>
+        </section>
+
+        <section class="resources-section">
+            <div class="resources-heading">
+                <span class="resources-label">Explore Our Resources</span>
+                <h2>Knowledge for what's next.</h2>
+                <p>
+                    Discover different perspectives on building teams,
+                    adopting technology and preparing for the future.
+                </p>
+            </div>
+
+            <div class="resources-grid">
+
+                <article class="resource-card">
+                    <div class="resource-icon">✦</div>
+                    <span class="resource-type">Talent & Careers</span>
+                    <h3>Building teams for the future</h3>
+                    <p>
+                        Explore ideas around talent, professional growth
+                        and the changing needs of modern businesses.
+                    </p>
+                    <a class="resource-link" href="talent.html">
+                        Explore Clyfe Talent →
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-icon">⌘</div>
+                    <span class="resource-type">Technology</span>
+                    <h3>Technology that creates possibilities</h3>
+                    <p>
+                        Learn how technology and digital solutions can
+                        help organizations address business challenges.
+                    </p>
+                    <a class="resource-link" href="celsior.html">
+                        Explore Celsior →
+                    </a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-icon">↗</div>
+                    <span class="resource-type">Learning & Growth</span>
+                    <h3>Prepare for tomorrow's skills</h3>
+                    <p>
+                        Explore learning, skill development and ideas
+                        that support continuous professional growth.
+                    </p>
+                    <a class="resource-link" href="genspark.html">
+                        Explore GenSpark →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="resources-cta">
+            <h2>Let's turn possibilities into progress.</h2>
+            <p>
+                Have a business challenge or want to learn more about
+                Clyfe's capabilities? Get in touch with our team.
+            </p>
+            <a href="contact.html">Contact Us →</a>
+        </section>
+
+         <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

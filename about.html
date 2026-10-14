@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Clyfe</title>
+
+    <meta name="description"
+          content="Discover Clyfe, where talent, technology and training come together to help businesses move forward.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ABOUT PAGE */
+
+        .about-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 115px 6% 100px;
+            background: #171326;
+            color: #fff;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            width: 480px;
+            height: 480px;
+            right: -100px;
+            top: -180px;
+            border-radius: 50%;
+            background: #8053df;
+            filter: blur(120px);
+            opacity: .45;
+        }
+
+        .about-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-label {
+            display: inline-block;
+            color: #c4a8ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+        }
+
+        .about-hero h1 {
+            max-width: 900px;
+            margin: 25px 0;
+            font-size: clamp(42px, 6.5vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+        }
+
+        .about-hero h1 span {
+            color: #b89aff;
+        }
+
+        .about-hero p {
+            max-width: 650px;
+            color: #d0cadc;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .about-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 32px;
+        }
+
+        .about-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 23px;
+            border: 1px solid #8c65e5;
+            border-radius: 50px;
+            background: #8053df;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .about-btn:hover {
+            transform: translateY(-3px);
+            background: #966eea;
+        }
+
+        .about-btn-outline {
+            background: transparent;
+            border-color: #625773;
+        }
+
+        .about-btn-outline:hover {
+            background: #302741;
+        }
+
+        /* INTRODUCTION */
+
+        .about-intro {
+            padding: 100px 6%;
+            background: #fff;
+        }
+
+        .about-intro-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-intro h2,
+        .about-values-heading h2 {
+            margin: 18px 0;
+            color: #1b1729;
+            font-size: clamp(32px, 4vw, 49px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .about-intro h2 span,
+        .about-values-heading h2 span {
+            color: #8053df;
+        }
+
+        .about-intro p {
+            color: #777287;
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        .about-visual {
+            position: relative;
+            display: flex;
+            min-height: 390px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 70% 25%, #cdb8ff, transparent 35%),
+                linear-gradient(135deg, #f0e9ff, #d9ccff);
+        }
+
+        .about-visual::before,
+        .about-visual::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgba(110, 70, 190, .35);
+            border-radius: 50%;
+        }
+
+        .about-visual::after {
+            width: 320px;
+            height: 320px;
+        }
+
+        .about-visual-core {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 145px;
+            height: 145px;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid rgba(255, 255, 255, .55);
+            border-radius: 38px;
+            background: linear-gradient(135deg, #7950df, #a67bed);
+            color: #fff;
+            font-size: 38px;
+            font-weight: 800;
+            box-shadow: 0 25px 65px rgba(80, 48, 155, .28);
+            animation: aboutFloat 4s ease-in-out infinite;
+        }
+
+        .about-orbit-label {
+            position: absolute;
+            z-index: 2;
+            padding: 12px 16px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, .88);
+            color: #39285b;
+            font-size: 12px;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(50, 30, 90, .08);
+        }
+
+        .about-orbit-one {
+            top: 65px;
+            left: 30px;
+        }
+
+        .about-orbit-two {
+            right: 25px;
+            top: 135px;
+        }
+
+        .about-orbit-three {
+            bottom: 55px;
+            left: 50px;
+        }
+
+        /* MISSION & VISION */
+
+        .about-values {
+            padding: 100px 6%;
+            background: #f8f6fc;
+        }
+
+        .about-values-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-values-heading {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .about-values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .about-value-card {
+            padding: 32px;
+            border: 1px solid #ebe5f5;
+            border-radius: 23px;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .about-value-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(46, 27, 85, .09);
+        }
+
+        .about-value-icon {
+            display: flex;
+            width: 54px;
+            height: 54px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            border-radius: 17px;
+            background: #eee6ff;
+            color: #8053df;
+            font-size: 25px;
+        }
+
+        .about-value-card h3 {
+            margin: 0 0 13px;
+            color: #211a30;
+            font-size: 22px;
+        }
+
+        .about-value-card p {
+            margin: 0;
+            color: #777287;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* THREE BUSINESSES */
+
+        .about-businesses {
+            padding: 100px 6%;
+            background: #fff;
+        }
+
+        .about-businesses-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-businesses-heading {
+            max-width: 720px;
+            margin-bottom: 45px;
+        }
+
+        .about-businesses-heading h2 {
+            margin: 18px 0;
+            font-size: clamp(32px, 4vw, 49px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .about-businesses-heading h2 span {
+            color: #8053df;
+        }
+
+        .about-businesses-heading p {
+            color: #777287;
+            line-height: 1.9;
+        }
+
+        .about-businesses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .about-business-card {
+            padding: 30px;
+            border: 1px solid #ebe5f5;
+            border-radius: 23px;
+            transition: .3s ease;
+        }
+
+        .about-business-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(46, 27, 85, .09);
+        }
+
+        .about-business-card:nth-child(1) {
+            background: #f4efff;
+        }
+
+        .about-business-card:nth-child(2) {
+            background: #fff4e9;
+        }
+
+        .about-business-card:nth-child(3) {
+            background: #eef5ff;
+        }
+
+        .about-business-number {
+            display: block;
+            margin-bottom: 30px;
+            color: #8053df;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .about-business-card h3 {
+            margin: 0 0 13px;
+            font-size: 24px;
+        }
+
+        .about-business-card p {
+            min-height: 80px;
+            color: #6f687d;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .about-business-card a {
+            color: #7045cb;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        /* CONTACT CTA */
+
+        .about-cta {
+            padding: 85px 6%;
+            background: #171326;
+            color: #fff;
+        }
+
+        .about-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-cta h2 {
+            max-width: 700px;
+            margin: 0 0 15px;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .about-cta p {
+            color: #c9c2d6;
+            line-height: 1.8;
+        }
+
+        @keyframes aboutFloat {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
+        }
+
+        @media (max-width: 850px) {
+            .about-intro-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-values-grid,
+            .about-businesses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .about-business-card p {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .about-hero {
+                padding: 85px 5%;
+            }
+
+            .about-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .about-intro,
+            .about-values,
+            .about-businesses {
+                padding: 70px 5%;
+            }
+
+            .about-visual {
+                min-height: 300px;
+            }
+
+            .about-visual-core {
+                width: 110px;
+                height: 110px;
+                border-radius: 30px;
+                font-size: 30px;
+            }
+
+            .about-orbit-one {
+                top: 40px;
+                left: 12px;
+            }
+
+            .about-orbit-two {
+                right: 10px;
+                top: 110px;
+            }
+
+            .about-orbit-three {
+                bottom: 30px;
+                left: 15px;
+            }
+
+            .about-value-card,
+            .about-business-card {
+                padding: 25px;
+            }
+
+            .about-cta {
+                padding: 70px 5%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-visual-core {
+                animation: none;
+            }
+
+            .about-value-card,
+            .about-business-card {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+     <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+    <!-- HERO -->
+    <section class="about-hero">
+        <div class="about-hero-inner">
+            <span class="about-label">GET TO KNOW CLYFE</span>
+
+            <h1>
+                People. Technology.<br>
+                <span>Possibilities.</span>
+            </h1>
+
+            <p>
+                We bring talent, technology and training together to help
+                businesses navigate challenges, develop capabilities and
+                move confidently toward their goals.
+            </p>
+
+            <div class="about-hero-actions">
+                <a href="#our-story" class="about-btn">
+                    Discover Clyfe ↓
+                </a>
+
+                <a href="contact.html" class="about-btn about-btn-outline">
+                    Let's Talk ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT CLYFE -->
+    <section class="about-intro" id="our-story">
+        <div class="about-intro-inner">
+
+            <div>
+                <span class="about-label">WHO WE ARE</span>
+
+                <h2>
+                    Bringing people and technology
+                    <span>together.</span>
+                </h2>
+
+                <p>
+                    Clyfe brings together complementary capabilities across
+                    talent, technology and training. Our focus is helping
+                    organizations find the right expertise, explore smarter
+                    solutions and build skills for a changing workplace.
+                </p>
+
+                <p>
+                    Through Clyfe Talent, Celsior and GenSpark, we connect
+                    workforce needs, technology capabilities and learning
+                    opportunities.
+                </p>
+
+                <a href="services.html" class="about-btn">
+                    Explore Our Services ↗
+                </a>
+            </div>
+
+            <div class="about-visual">
+                <span class="about-orbit-label about-orbit-one">TALENT</span>
+                <span class="about-orbit-label about-orbit-two">TECHNOLOGY</span>
+                <span class="about-orbit-label about-orbit-three">TRAINING</span>
+
+                <div class="about-visual-core">C</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MISSION AND VALUES -->
+    <section class="about-values">
+        <div class="about-values-inner">
+
+            <div class="about-values-heading">
+                <span class="about-label">WHAT DRIVES US</span>
+
+                <h2>
+                    One purpose.<br>
+                    <span>Multiple possibilities.</span>
+                </h2>
+
+                <p>
+                    We focus on practical solutions that bring together
+                    people, ideas and capabilities.
+                </p>
+            </div>
+
+            <div class="about-values-grid">
+
+                <article class="about-value-card">
+                    <div class="about-value-icon">◎</div>
+                    <h3>People First</h3>
+                    <p>
+                        Recognizing the value of people, their expertise
+                        and their potential to make a difference.
+                    </p>
+                </article>
+
+                <article class="about-value-card">
+                    <div class="about-value-icon">✳</div>
+                    <h3>Innovation Driven</h3>
+                    <p>
+                        Exploring technology and smarter approaches to
+                        solve business challenges.
+                    </p>
+                </article>
+
+                <article class="about-value-card">
+                    <div class="about-value-icon">↗</div>
+                    <h3>Growth Together</h3>
+                    <p>
+                        Supporting progress through collaboration,
+                        learning and continuous development.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR BUSINESSES -->
+    <section class="about-businesses">
+        <div class="about-businesses-inner">
+
+            <div class="about-businesses-heading">
+                <span class="about-label">OUR BUSINESSES</span>
+
+                <h2>
+                    Three strengths.<br>
+                    <span>One shared vision.</span>
+                </h2>
+
+                <p>
+                    Explore the businesses that bring Clyfe's capabilities
+                    together.
+                </p>
+            </div>
+
+            <div class="about-businesses-grid">
+
+                <article class="about-business-card">
+                    <span class="about-business-number">01 / TALENT</span>
+                    <h3>Clyfe Talent</h3>
+                    <p>
+                        Connecting organizations with talent and expertise
+                        to support their workforce needs.
+                    </p>
+                    <a href="talent.html">Explore Talent ↗</a>
+                </article>
+
+                <article class="about-business-card">
+                    <span class="about-business-number">02 / TECHNOLOGY</span>
+                    <h3>Celsior</h3>
+                    <p>
+                        Exploring technology capabilities and digital
+                        solutions for business needs.
+                    </p>
+                    <a href="celsior.html">Explore Celsior ↗</a>
+                </article>
+
+                <article class="about-business-card">
+                    <span class="about-business-number">03 / TRAINING</span>
+                    <h3>GenSpark</h3>
+                    <p>
+                        Supporting learning and skills development for
+                        evolving workplace opportunities.
+                    </p>
+                    <a href="genspark.html">Explore GenSpark ↗</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="about-cta">
+        <div class="about-cta-inner">
+
+            <div>
+                <h2>Let's turn possibilities into progress.</h2>
+                <p>
+                    Have a business challenge or a goal in mind?
+                    Let's start a conversation.
+                </p>
+            </div>
+
+            <a href="contact.html" class="about-btn">
+                Contact Clyfe ↗
+            </a>
+
+        </div>
+    </section>
+     <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

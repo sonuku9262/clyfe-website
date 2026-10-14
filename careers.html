@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers | Clyfe</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .careers-page {
+            color: #211a30;
+            overflow-x: clip;
+        }
+
+        .careers-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 7% 100px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 15% 15%,
+                    rgba(125, 75, 235, .15), transparent 35%),
+                linear-gradient(135deg, #f6f1ff, #fff);
+        }
+
+        .careers-hero::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            right: -100px;
+            bottom: -150px;
+            border: 1px solid #d9c8ff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(117, 67, 214, .05),
+                        0 0 0 70px rgba(117, 67, 214, .04);
+            animation: careersRotate 18s linear infinite;
+        }
+
+        .careers-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: auto;
+            animation: careersEnter .8s ease both;
+        }
+
+        .careers-tag {
+            display: inline-block;
+            padding: 9px 17px;
+            border-radius: 40px;
+            background: #ece3ff;
+            color: #6738c5;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .careers-hero h1 {
+            margin: 25px 0 22px;
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+        }
+
+        .careers-hero h1 span {
+            color: #7543d6;
+        }
+
+        .careers-hero p {
+            max-width: 690px;
+            margin: auto;
+            color: #6e667b;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .careers-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 26px;
+            border-radius: 40px;
+            background: #7040cb;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(112, 64, 203, .2);
+            transition: transform .3s ease,
+                        box-shadow .3s ease;
+        }
+
+        .careers-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(112, 64, 203, .3);
+        }
+
+        .careers-section {
+            padding: 85px 7%;
+        }
+
+        .careers-heading {
+            max-width: 730px;
+            margin-bottom: 42px;
+        }
+
+        .careers-heading h2 {
+            margin: 17px 0;
+            font-size: clamp(30px, 4vw, 45px);
+            letter-spacing: -1.2px;
+        }
+
+        .careers-heading p {
+            color: #716a7c;
+            line-height: 1.9;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .career-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 315px;
+            padding: 30px;
+            border: 1px solid #eee7f8;
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 10px 35px rgba(49, 28, 83, .05);
+            transition: transform .35s ease,
+                        box-shadow .35s ease,
+                        border-color .35s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            border-color: #d9c7ff;
+            box-shadow: 0 22px 45px rgba(49, 28, 83, .12);
+        }
+
+        .career-icon {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 24px;
+            border-radius: 17px;
+            background: #f0e8ff;
+            color: #7040cb;
+            font-size: 26px;
+            transition: transform .35s ease;
+        }
+
+        .career-card:hover .career-icon {
+            transform: rotate(-7deg) scale(1.08);
+        }
+
+        .career-card h3 {
+            margin: 0 0 14px;
+            font-size: 23px;
+        }
+
+        .career-card p {
+            margin: 0 0 22px;
+            color: #716a7c;
+            line-height: 1.8;
+        }
+
+        .career-card a {
+            margin-top: auto;
+            color: #6935ce;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .career-card a:hover {
+            text-decoration: underline;
+        }
+
+        .careers-values {
+            padding: 75px 7%;
+            background: #f8f5ff;
+        }
+
+        .careers-values-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .careers-values h2 {
+            margin: 18px 0;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+        }
+
+        .careers-values p {
+            color: #716a7c;
+            line-height: 1.9;
+        }
+
+        .careers-value-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .careers-value-item {
+            padding: 22px;
+            border: 1px solid #eee6fc;
+            border-radius: 17px;
+            background: #fff;
+            transition: transform .3s ease;
+        }
+
+        .careers-value-item:hover {
+            transform: translateX(6px);
+        }
+
+        .careers-value-item h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .careers-value-item p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .careers-cta {
+            margin: 80px 7%;
+            padding: 65px 25px;
+            border-radius: 28px;
+            background: linear-gradient(120deg, #5124a8, #8050e5);
+            color: #fff;
+            text-align: center;
+        }
+
+        .careers-cta h2 {
+            margin: 0 0 18px;
+            font-size: clamp(30px, 4vw, 45px);
+        }
+
+        .careers-cta p {
+            max-width: 650px;
+            margin: auto;
+            color: #eee6ff;
+            line-height: 1.8;
+        }
+
+        .careers-cta a {
+            display: inline-block;
+            margin-top: 27px;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: #fff;
+            color: #5424a8;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .3s ease;
+        }
+
+        .careers-cta a:hover {
+            transform: translateY(-4px);
+        }
+
+        @keyframes careersEnter {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes careersRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .careers-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .careers-values-inner {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .careers-hero {
+                padding: 75px 6%;
+            }
+
+            .careers-hero h1 {
+                letter-spacing: -1.4px;
+            }
+
+            .careers-hero p {
+                font-size: 16px;
+            }
+
+            .careers-section {
+                padding: 55px 6%;
+            }
+
+            .careers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-card {
+                min-height: 275px;
+            }
+
+            .careers-values {
+                padding: 55px 6%;
+            }
+
+            .careers-cta {
+                margin: 55px 5%;
+                padding: 45px 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .careers-page *,
+            .careers-page *::before,
+            .careers-page *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="careers-page">
+
+     <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+    <section class="careers-hero">
+        <div class="careers-hero-content">
+            <span class="careers-tag">Careers at Clyfe</span>
+
+            <h1>
+                Build what's next.<br>
+                <span>Grow with purpose.</span>
+            </h1>
+
+            <p>
+                Bring your ideas, skills and ambition to work that
+                connects people, technology and business possibilities.
+                Explore your next professional step with Clyfe.
+            </p>
+
+            <a class="careers-button" href="#career-paths">
+                Explore Career Paths ↓
+            </a>
+        </div>
+    </section>
+
+    <section class="careers-section" id="career-paths">
+        <div class="careers-heading">
+            <span class="careers-tag">Explore Opportunities</span>
+            <h2>Find where your strengths can make a difference.</h2>
+            <p>
+                Explore the areas connected to Clyfe's businesses.
+                For current openings and application details,
+                contact the team.
+            </p>
+        </div>
+
+        <div class="careers-grid">
+
+            <article class="career-card">
+                <div class="career-icon">✦</div>
+                <h3>Technology & Digital</h3>
+                <p>
+                    Explore work related to technology, digital
+                    capabilities, data and innovative solutions.
+                </p>
+                <a href="celsior.html">Explore Celsior →</a>
+            </article>
+
+            <article class="career-card">
+                <div class="career-icon">◎</div>
+                <h3>Talent & Professional Roles</h3>
+                <p>
+                    Discover the professional talent and workforce
+                    capabilities connected to Clyfe Talent.
+                </p>
+                <a href="talent.html">Explore Clyfe Talent →</a>
+            </article>
+
+            <article class="career-card">
+                <div class="career-icon">↗</div>
+                <h3>Learning & Development</h3>
+                <p>
+                    Explore learning and skill development for
+                    a changing professional world.
+                </p>
+                <a href="genspark.html">Explore GenSpark →</a>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="careers-values">
+        <div class="careers-values-inner">
+            <div>
+                <span class="careers-tag">Your Next Chapter</span>
+                <h2>Bring your curiosity. Build your capabilities.</h2>
+                <p>
+                    Every career journey is different. Explore the
+                    work that interests you and learn more about
+                    the teams and capabilities across Clyfe.
+                </p>
+            </div>
+
+            <div class="careers-value-list">
+                <article class="careers-value-item">
+                    <h3>Keep Learning</h3>
+                    <p>
+                        Continue developing skills and exploring
+                        new ideas throughout your career.
+                    </p>
+                </article>
+
+                <article class="careers-value-item">
+                    <h3>Make an Impact</h3>
+                    <p>
+                        Bring your perspective to meaningful
+                        business and technology challenges.
+                    </p>
+                </article>
+
+                <article class="careers-value-item">
+                    <h3>Explore Possibilities</h3>
+                    <p>
+                        Discover different areas of expertise
+                        and potential professional paths.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="careers-cta">
+        <h2>Let's talk about your future.</h2>
+        <p>
+            Want to learn more about Clyfe or ask about potential
+            career opportunities? Get in touch with the team.
+        </p>
+        <a href="contact.html">Contact Clyfe ↗</a>
+    </section>
+
+   <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

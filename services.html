@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | Clyfe</title>
+    <meta name="description" content="Explore Clyfe talent solutions, professional staffing, healthcare workforce solutions and technology services.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* SERVICES PAGE */
+
+        .services-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 6%;
+            background: #191428;
+            color: white;
+        }
+
+        .services-hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -100px;
+            top: -160px;
+            border-radius: 50%;
+            background: #8053df;
+            filter: blur(130px);
+            opacity: .4;
+        }
+
+        .services-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services-eyebrow {
+            color: #c3a9ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+        }
+
+        .services-hero h1 {
+            max-width: 900px;
+            margin: 24px 0;
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.08;
+            letter-spacing: -2.5px;
+        }
+
+        .services-hero h1 span {
+            color: #b99aff;
+        }
+
+        .services-hero p {
+            max-width: 650px;
+            color: #d2ccdf;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .services-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .services-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 23px;
+            border: 1px solid #8053df;
+            border-radius: 40px;
+            background: #8053df;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .services-btn:hover {
+            background: #986feb;
+            transform: translateY(-3px);
+        }
+
+        .services-btn-outline {
+            border-color: #665c77;
+            background: transparent;
+        }
+
+        .services-btn-outline:hover {
+            background: #302740;
+        }
+
+        /* INTRO */
+
+        .services-intro {
+            padding: 85px 6% 45px;
+            background: #fff;
+        }
+
+        .services-intro-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services-intro h2,
+        .business-solutions h2 {
+            margin: 18px 0;
+            color: #20192e;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .services-intro h2 span,
+        .business-solutions h2 span {
+            color: #8053df;
+        }
+
+        .services-intro p,
+        .business-solutions-intro {
+            max-width: 700px;
+            color: #777287;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* SERVICE CARDS */
+
+        .services-list {
+            padding: 35px 6% 100px;
+            background: #fff;
+        }
+
+        .services-list-inner {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid #ebe5f5;
+            border-radius: 24px;
+            background: #faf9fd;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px rgba(46, 27, 85, .10);
+        }
+
+        .service-icon {
+            display: flex;
+            width: 58px;
+            height: 58px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 27px;
+            border-radius: 18px;
+            background: #eee6ff;
+            color: #8053df;
+            font-size: 27px;
+        }
+
+        .service-number {
+            color: #8c72c4;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .service-item h3 {
+            margin: 16px 0 13px;
+            color: #20192e;
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        .service-item p {
+            min-height: 105px;
+            margin: 0 0 22px;
+            color: #777287;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .service-item a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #7950d8;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .service-item a span {
+            transition: transform .3s ease;
+        }
+
+        .service-item a:hover span {
+            transform: translate(4px, -4px);
+        }
+
+        /* BUSINESS SOLUTIONS */
+
+        .business-solutions {
+            padding: 100px 6%;
+            background: #f8f6fc;
+        }
+
+        .business-solutions-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .business-solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .business-solution-card {
+            padding: 30px;
+            border: 1px solid #e9e2f5;
+            border-radius: 22px;
+            background: #fff;
+            transition: .3s ease;
+        }
+
+        .business-solution-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(46, 27, 85, .08);
+        }
+
+        .business-solution-card:nth-child(1) {
+            border-top: 4px solid #8053df;
+        }
+
+        .business-solution-card:nth-child(2) {
+            border-top: 4px solid #e99a56;
+        }
+
+        .business-solution-card:nth-child(3) {
+            border-top: 4px solid #6498e8;
+        }
+
+        .business-solution-card h3 {
+            margin: 12px 0;
+            font-size: 24px;
+        }
+
+        .business-solution-card p {
+            color: #777287;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .business-solution-card a {
+            display: inline-block;
+            margin-top: 12px;
+            color: #7950d8;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        /* CONTACT CTA */
+
+        .services-cta {
+            padding: 85px 6%;
+            background: #191428;
+            color: #fff;
+        }
+
+        .services-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services-cta h2 {
+            max-width: 720px;
+            margin: 0 0 15px;
+            font-size: clamp(32px, 4vw, 47px);
+            line-height: 1.15;
+        }
+
+        .services-cta p {
+            color: #cec7db;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 900px) {
+            .services-list-inner,
+            .business-solutions-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .services-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-hero {
+                padding: 80px 5%;
+            }
+
+            .services-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .services-intro,
+            .business-solutions {
+                padding: 70px 5% 35px;
+            }
+
+            .services-list {
+                padding: 25px 5% 70px;
+            }
+
+            .services-list-inner,
+            .business-solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item p {
+                min-height: auto;
+            }
+
+            .services-cta {
+                padding: 70px 5%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .service-item,
+            .business-solution-card,
+            .services-btn {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+      <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="logo">clyfe<span>.</span></a>
+
+            <button class="mobile-toggle" id="menuButton" aria-label="Open menu"
+                aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-dropdown">
+                    <button id="servicesButton" class="nav-link">Services
+                    </button>
+                    <div class="dropdown-menu" id="servicesMenu">
+                        <a href="talent.html"><b>Clyfe Talent</b><small>People
+                                and workforce solutions</small></a>
+                        <a href="celsior.html"><b>Celsior</b><small>Technology
+                                and innovation</small></a>
+                        <a href="genspark.html"><b>GenSpark</b><small>Training
+                                and skills</small></a>
+                    </div>
+                </div>
+                <a class="nav-link" href="solutions.html">Solutions</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-cta" href="contact.html">Let's Talk ↗</a>
+            </nav>
+        </header>
+
+    <!-- HERO -->
+    <section class="services-hero">
+        <div class="services-hero-inner">
+
+            <span class="services-eyebrow">WHAT WE DO</span>
+
+            <h1>
+                Big challenges.<br>
+                <span>Smarter solutions.</span>
+            </h1>
+
+            <p>
+                From finding the right talent to exploring technology
+                solutions and developing skills, Clyfe brings together
+                capabilities to support evolving business needs.
+            </p>
+
+            <div class="services-actions">
+                <a href="#our-services" class="services-btn">
+                    Explore Our Services ↓
+                </a>
+
+                <a href="contact.html"
+                   class="services-btn services-btn-outline">
+                    Let's Talk ↗
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="services-intro" id="our-services">
+        <div class="services-intro-inner">
+
+            <span class="services-eyebrow">OUR CAPABILITIES</span>
+
+            <h2>
+                The right expertise for<br>
+                <span>what comes next.</span>
+            </h2>
+
+            <p>
+                Every organization has different goals and challenges.
+                Our services span talent, workforce solutions and
+                technology capabilities to help businesses find the
+                support they need.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-list">
+        <div class="services-list-inner">
+
+            <article class="service-item">
+                <div class="service-icon">◎</div>
+                <span class="service-number">01 / TALENT</span>
+
+                <h3>IT Talent Solutions</h3>
+
+                <p>
+                    Connect with technology professionals whose skills
+                    and expertise align with your project and workforce
+                    requirements.
+                </p>
+
+                <a href="talent.html">
+                    Explore Talent <span>↗</span>
+                </a>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">✳</div>
+                <span class="service-number">02 / PROFESSIONAL</span>
+
+                <h3>Professional Talent Solutions</h3>
+
+                <p>
+                    Explore workforce support for professional roles
+                    and business functions as your organization grows
+                    and evolves.
+                </p>
+
+                <a href="staffing.html">
+                    Explore Staffing <span>↗</span>
+                </a>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">＋</div>
+                <span class="service-number">03 / HEALTHCARE</span>
+
+                <h3>Healthcare Workforce Solutions</h3>
+
+                <p>
+                    Explore workforce solutions designed around
+                    healthcare organizations and their staffing needs.
+                </p>
+
+                <a href="contact.html">
+                    Discuss Your Needs <span>↗</span>
+                </a>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">⌘</div>
+                <span class="service-number">04 / TECHNOLOGY</span>
+
+                <h3>Technology & Automation</h3>
+
+                <p>
+                    Explore digital capabilities and automation
+                    approaches that can help simplify business
+                    processes and workflows.
+                </p>
+
+                <a href="celsior.html">
+                    Explore Celsior <span>↗</span>
+                </a>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">↗</div>
+                <span class="service-number">05 / DEVELOPMENT</span>
+
+                <h3>Training & Development</h3>
+
+                <p>
+                    Support continuous learning and skill development
+                    to help people prepare for changing workplace
+                    opportunities.
+                </p>
+
+                <a href="genspark.html">
+                    Explore GenSpark <span>↗</span>
+                </a>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">◇</div>
+                <span class="service-number">06 / COLLABORATION</span>
+
+                <h3>Customized Solutions</h3>
+
+                <p>
+                    Start a conversation about your organization's
+                    requirements and explore which capabilities may
+                    be the right fit.
+                </p>
+
+                <a href="contact.html">
+                    Talk to Our Team <span>↗</span>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- OUR BUSINESSES -->
+    <section class="business-solutions">
+        <div class="business-solutions-inner">
+
+            <span class="services-eyebrow">ONE CONNECTED APPROACH</span>
+
+            <h2>
+                Three businesses.<br>
+                <span>Shared possibilities.</span>
+            </h2>
+
+            <p class="business-solutions-intro">
+                Explore the businesses that bring Clyfe's talent,
+                technology and training capabilities together.
+            </p>
+
+            <div class="business-solutions-grid">
+
+                <article class="business-solution-card">
+                    <span class="service-number">01 / TALENT</span>
+                    <h3>Clyfe Talent</h3>
+                    <p>
+                        Talent and workforce solutions for evolving
+                        organizational requirements.
+                    </p>
+                    <a href="talent.html">Discover Clyfe Talent ↗</a>
+                </article>
+
+                <article class="business-solution-card">
+                    <span class="service-number">02 / TECHNOLOGY</span>
+                    <h3>Celsior</h3>
+                    <p>
+                        Technology capabilities and digital solutions
+                        to help address business challenges.
+                    </p>
+                    <a href="celsior.html">Discover Celsior ↗</a>
+                </article>
+
+                <article class="business-solution-card">
+                    <span class="service-number">03 / TRAINING</span>
+                    <h3>GenSpark</h3>
+                    <p>
+                        Learning and development opportunities for
+                        skills needed in a changing workplace.
+                    </p>
+                    <a href="genspark.html">Discover GenSpark ↗</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="services-cta">
+        <div class="services-cta-inner">
+
+            <div>
+                <h2>Let's find the right solution for your goals.</h2>
+                <p>
+                    Tell us about your business needs and start a
+                    conversation with Clyfe.
+                </p>
+            </div>
+
+            <a href="contact.html" class="services-btn">
+                Contact Us ↗
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html"
+                        class="logo footer-logo">clyfe<span>.</span></a>
+                    <p>Talent, technology and training — connected to move your
+                        business forward.</p>
+                </div>
+                <div><h4>Company</h4><a href="about.html">About Us</a><a
+                        href="careers.html">Careers</a><a
+                        href="contact.html">Contact</a></div>
+                <div><h4>Our Businesses</h4><a href="talent.html">Clyfe
+                        Talent</a><a href="celsior.html">Celsior</a><a
+                        href="genspark.html">GenSpark</a></div>
+                <div><h4>Explore</h4><a href="solutions.html">Solutions</a><a
+                        href="resources.html">Resources</a><a
+                        href="approach.html">Our Approach</a></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Clyfe. All rights
+                    reserved.</span><span>Talent · Technology ·
+                    Training</span></div>
+        </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
